@@ -12,6 +12,8 @@ const PokemonInfo = ({ pokemon }) => {
 
     const types = pokemon.types.map((typeInfo) => typeInfo.type.name).join(', ');
     const games = pokemon.game_indices.map((gameIndex) => gameIndex.version.name).join(', ');
+    // Map the abilities to their names, and join them with a comma if there are multiple abilities.
+    const abilities = pokemon.abilities.map((abilityInfo) => abilityInfo.ability.name).join(', ');
 
     return (
         <Card sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, margin: '20px auto', maxWidth: 800, overflow: 'hidden' }}>
@@ -33,6 +35,9 @@ const PokemonInfo = ({ pokemon }) => {
                     <Divider variant="middle" sx={{ bgcolor: 'primary.main' }} />
                     <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
                         Type: {types}
+                    </Typography>
+                    <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
+                        Abilities: {abilities}
                     </Typography>
                     <Divider variant="middle" sx={{ bgcolor: 'primary.light' }} />
                     <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
