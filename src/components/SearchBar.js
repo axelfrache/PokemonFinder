@@ -7,13 +7,13 @@ const SearchBar = ({ onSearch }) => {
         <form onSubmit={onSearch} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px', margin: '20px' }}>
             <TextField
                 name="pokemonName"
-                label="Entrez le nom d'un Pokémon"
+                label="Enter a Pokémon name or ID"
                 variant="outlined"
                 fullWidth
-                style={{ maxWidth: '500px' }} // Vous pouvez ajuster ceci pour contrôler la largeur maximale
+                style={{ maxWidth: '500px' }}
             />
             <Button type="submit" variant="contained" color="primary">
-                Rechercher
+                Search
             </Button>
         </form>
     );
