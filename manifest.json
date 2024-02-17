@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Pokemon Finder",
+  "name": "React-based application, serves as an interactive Pokédex",
   "icons": [
     {
       "src": "favicon.ico",
