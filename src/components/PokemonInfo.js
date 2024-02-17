@@ -12,7 +12,6 @@ const PokemonInfo = ({ pokemon }) => {
 
     const types = pokemon.types.map((typeInfo) => typeInfo.type.name).join(', ');
     const games = pokemon.game_indices.map((gameIndex) => gameIndex.version.name).join(', ');
-    // Map the abilities to their names, and join them with a comma if there are multiple abilities.
     const abilities = pokemon.abilities.map((abilityInfo) => abilityInfo.ability.name).join(', ');
 
     return (
