@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Pokemon Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pokemon Finder is a simple web application built with React that allows users to search for Pokémon by name or ID. Utilizing the PokéAPI, it provides detailed information about each Pokémon, including its type, abilities, and the games it appears in.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+Before you begin, ensure you have met the following requirements:
 
-### `npm start`
+- Node.js installed on your machine (version 12.x or later recommended).
+- npm (Node Package Manager) or Yarn, depending on your preferences for managing JavaScript packages.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Clone the repository:**
+```bash
+git clone https://https://github.com/axelfrache/ReactPokemonFinder.git
+cd react-pokemon-finder
+```
 
-### `npm test`
+**Install the required packages:**
+- Using npm:
+```bash
+npm install
+```
+- Or using Yarn:
+```bash
+yarn
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Run the application:**
+- Using npm:
+```bash
+npm start
+```
+- Or using Yarn:
+```bash
+yarn start
+```
+This will launch the React application in your default web browser. The app typically runs on http://localhost:3000.
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To use React Pokemon Finder, follow these steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Open the application** in your web browser. You should see a search bar with the text "Enter a Pokémon name or ID".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Enter a Pokémon name or ID** in the search bar. The name is not case sensitive, and leading zeros in an ID can be omitted.
 
-### `npm run eject`
+3. **Click the "Search" button** or press enter to submit your search.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **View the Pokémon's details** displayed below the search bar. If the Pokémon cannot be found, an error message will be displayed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Search for Pokémon by name or numerical ID.
+- View detailed information about each Pokémon, including types, abilities, and game appearances.
+- Responsive design for viewing on various devices.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
+Contributions to Pokemon Finder are welcome!
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Fork the repository** on GitHub.
+2. **Clone your fork** to your local machine.
+3. **Create a new branch** for your features or fixes.
+4. **Commit your changes** with descriptive commit messages.
+5. **Push your branch** to your fork.
+6. **Open a pull request** against the main repository.
