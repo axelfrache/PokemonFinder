@@ -3,7 +3,7 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import PokemonInfo from './components/PokemonInfo';
 import Header from './components/Header';
-import ErrorMessage from './components/ErrorMessage'; // Assurez-vous que ce composant est bien importé
+import ErrorMessage from './components/ErrorMessage';
 import './assets/fonts/fonts.css';
 import './App.css';
 
@@ -20,7 +20,6 @@ function App() {
         setPokemonData(null);
 
         try {
-            // Requête pour les données de base du Pokémon
             const { data: baseData } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNameOrId.toLowerCase().replace(/^0+/, '')}`);
 
             const { data: speciesData } = await axios.get(baseData.species.url);
