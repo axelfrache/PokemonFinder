@@ -9,7 +9,7 @@ import '../assets/fonts/fonts.css';
 class Header extends Component {
     render() {
         return (
-            <AppBar position="static" sx={{ backgroundColor: '#e12929' }}>
+            <AppBar position="static" sx={{ backgroundColor: '#ef233c' }}>
                 <Toolbar>
                     <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
                         <img src={Icon} alt="logo" style={{ marginRight: 10, width: 40, height: 40 }} />

@@ -3,35 +3,53 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import PokemonInfo from './components/PokemonInfo';
 import Header from './components/Header';
-import ErrorMessage from './components/ErrorMessage'; // Importez le nouveau composant d'erreur
+import ErrorMessage from './components/ErrorMessage'; // Assurez-vous que ce composant est bien importé
 import './assets/fonts/fonts.css';
+import './App.css';
 
 function App() {
-    const [pokemon, setPokemon] = useState(null);
+    const [pokemonData, setPokemonData] = useState(null);
     const [error, setError] = useState('');
 
-    const fetchPokemon = async (event) => {
-        event.preventDefault();
-        let pokemonName = event.target.elements.pokemonName.value;
-        pokemonName = pokemonName.toLowerCase().replace(/^0+/, '');
+    function cleanDescription(description) {
+        return description.replace(/\f/g, ' ');
+    }
+
+    const fetchPokemonData = async (pokemonNameOrId) => {
+        setError('');
+        setPokemonData(null);
 
         try {
-            const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-            setPokemon(response.data);
-            setError('');
+            // Requête pour les données de base du Pokémon
+            const { data: baseData } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonNameOrId.toLowerCase().replace(/^0+/, '')}`);
+
+            const { data: speciesData } = await axios.get(baseData.species.url);
+            const generation = speciesData.generation.name;
+            const flavorTextEntries = speciesData.flavor_text_entries.filter(entry => entry.language.name === 'en');
+            let description = flavorTextEntries.length > 0 ? flavorTextEntries[0].flavor_text : '';
+            description = cleanDescription(description);
+
+            setPokemonData({
+                ...baseData,
+                generation,
+                description
+            });
+
         } catch (error) {
-            console.error("There was an error fetching the Pokémon data", error);
-            setPokemon(null);
-            setError('Pokémon not found'); // Set the error message
+            console.error("There was an error fetching the Pokémon data:", error);
+            setError('Pokémon not found');
         }
     };
 
     return (
         <div className="App">
             <Header />
-            <SearchBar onSearch={fetchPokemon} />
-            {error && <ErrorMessage message={error} />} {/* Affiche le message d'erreur si error n'est pas vide */}
-            {pokemon && <PokemonInfo pokemon={pokemon} />}
+            <SearchBar onSearch={(e) => {
+                e.preventDefault();
+                const pokemonName = e.target.elements.pokemonName.value;
+                fetchPokemonData(pokemonName);
+            }} />
+            {error ? <ErrorMessage message={error} /> : pokemonData && <PokemonInfo pokemon={pokemonData} />}
         </div>
     );
 }
