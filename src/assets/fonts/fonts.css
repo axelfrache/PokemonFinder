@@ -10,3 +10,7 @@
     font-family: 'Roboto';
     src: url('Roboto-Regular.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'PokemonSolid';
+    src: url('GeneralSans-Semibold.otf') format('opentype');
+}
