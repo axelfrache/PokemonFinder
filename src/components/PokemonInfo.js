@@ -58,7 +58,7 @@ const PokemonInfo = ({ pokemon }) => {
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'PokemonPixel', textAlign: 'left', fontSize: '2rem' }}>
                                 {pokemon.name} (#{id})
                             </Typography>
-                            <Divider variant="middle" sx={{ bgcolor: 'primary.main' }} />
+                            <Divider variant="middle" sx={{ bgcolor: '#ef233c' }} />
                             <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
                                 <b>Description:</b> {description}
                             </Typography>
