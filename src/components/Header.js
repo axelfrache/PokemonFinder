@@ -14,7 +14,7 @@ class Header extends Component {
                     <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
                         <img src={Icon} alt="logo" style={{ marginRight: 10, width: 40, height: 40 }} />
                         <Typography variant="h6" component="div" sx={{fontFamily: 'PokemonSolid', fontSize: '1.5rem'}}>
-                            Pokemon Finder
+                            POKEMON FINDER
                         </Typography>
                     </Box>
                 </Toolbar>
