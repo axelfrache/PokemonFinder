@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/PokemonFinder/static/css/main.32303975.css",
-    "main.js": "/PokemonFinder/static/js/main.b3eb8a66.js",
+    "main.css": "/PokemonFinder/static/css/main.b45a35bf.css",
+    "main.js": "/PokemonFinder/static/js/main.71e7da1e.js",
     "static/js/453.0012a09b.chunk.js": "/PokemonFinder/static/js/453.0012a09b.chunk.js",
     "static/media/logo.png": "/PokemonFinder/static/media/logo.201daff11f88a7bf6993.png",
     "static/media/Roboto-Regular.ttf": "/PokemonFinder/static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
@@ -9,12 +9,12 @@
     "static/media/GeneralSans-Semibold.otf": "/PokemonFinder/static/media/GeneralSans-Semibold.04ff270253cd881ac35e.otf",
     "static/media/pokemon_pixel_font.woff": "/PokemonFinder/static/media/pokemon_pixel_font.62a855fa4fd1811c3373.woff",
     "index.html": "/PokemonFinder/index.html",
-    "main.32303975.css.map": "/PokemonFinder/static/css/main.32303975.css.map",
-    "main.b3eb8a66.js.map": "/PokemonFinder/static/js/main.b3eb8a66.js.map",
+    "main.b45a35bf.css.map": "/PokemonFinder/static/css/main.b45a35bf.css.map",
+    "main.71e7da1e.js.map": "/PokemonFinder/static/js/main.71e7da1e.js.map",
     "453.0012a09b.chunk.js.map": "/PokemonFinder/static/js/453.0012a09b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.32303975.css",
-    "static/js/main.b3eb8a66.js"
+    "static/css/main.b45a35bf.css",
+    "static/js/main.71e7da1e.js"
   ]
 }
