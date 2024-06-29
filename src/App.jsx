@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { CircularProgress, Snackbar, Alert } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import SearchBar from './components/SearchBar';
-import PokemonInfo from './components/PokemonInfo';
+import PokemonCard from './components/PokemonCard';
 import Header from './components/Header';
 import './assets/fonts/fonts.css';
 import './App.css';
 
 function App() {
     const [pokemonData, setPokemonData] = useState(null);
-    const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
 
     const cleanDescription = (description) => description.replace(/\f/g, ' ');
 
     const fetchPokemonData = async (pokemonNameOrId) => {
-        setError('');
         setPokemonData(null);
         setLoading(true);
 
@@ -35,8 +33,7 @@ function App() {
                 description
             });
         } catch (error) {
-            console.error("Error fetching Pokémon data:", error);
-            setError('Pokémon not found. Please try a different name or ID.');
+            window.alert('Pokémon not found. Please try a different name or ID.');
         } finally {
             setLoading(false);
         }
@@ -55,26 +52,7 @@ function App() {
                     <CircularProgress />
                 </div>
             )}
-            {error && (
-                <Snackbar
-                    open={error !== ''}
-                    autoHideDuration={6000}
-                    onClose={() => setError('')}
-                    TransitionProps={{ timeout: { enter: 500, exit: 500 } }}
-                >
-                    <Alert
-                        onClose={() => setError('')}
-                        severity="error"
-                        sx={{
-                            width: '100%',
-                            backgroundColor: '#f6f6f6'
-                        }}
-                    >
-                        {error}
-                    </Alert>
-                </Snackbar>
-            )}
-            {pokemonData && <PokemonInfo pokemon={pokemonData} />}
+            {pokemonData && <PokemonCard pokemon={pokemonData} />}
         </div>
     );
 }

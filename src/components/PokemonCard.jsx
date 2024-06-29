@@ -13,7 +13,9 @@ const cardStyles = {
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'row' },
     margin: '20px auto',
-    maxWidth: 800,
+    width: '90%',
+    minWidth: 300,
+    maxWidth: 600,
     overflow: 'hidden',
     backgroundColor: '#f6f6f6',
     boxShadow: '0 0 10px 0 rgba(0,0,0,0.2)',
@@ -32,7 +34,7 @@ const contentStyles = {
     fontFamily: 'Arial, PokemonPixel',
 };
 
-const PokemonInfo = ({ pokemon }) => {
+const PokemonCard = ({ pokemon }) => {
     if (!pokemon) return null;
     const types = pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
     const abilities = pokemon.abilities.map(abilityInfo => abilityInfo.ability.name).join(', ');
@@ -84,4 +86,4 @@ const PokemonInfo = ({ pokemon }) => {
     );
 };
 
-export default PokemonInfo;
+export default PokemonCard;
