@@ -17,9 +17,9 @@ const cardStyles = {
     overflow: 'hidden',
     backgroundColor: '#f6f6f6',
     boxShadow: '0 0 10px 0 rgba(0,0,0,0.2)',
-    transition: 'background-color 0.3s, box-shadow 0.3s',
+    transition: 'transform 0.3s, box-shadow 0.3s',
     '&:hover': {
-        backgroundColor: '#e0f7fa',
+        transform: 'scale(1.02)',
         boxShadow: '0 0 20px 0 rgba(0,0,0,0.3)',
     },
 };
