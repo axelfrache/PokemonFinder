@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Card, CardContent, Typography, CardMedia, Divider, Stack, CircularProgress, FormControlLabel, Checkbox } from '@mui/material';
+import React from 'react';
+import { Card, CardContent, Typography, CardMedia, Divider, Stack, CircularProgress } from '@mui/material';
 import '../assets/fonts/fonts.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -36,13 +36,7 @@ const contentStyles = {
     fontFamily: 'Arial, PokemonPixel',
 };
 
-const PokemonCard = ({ pokemon, loading }) => {
-    const [isShiny, setIsShiny] = useState(false);
-
-    const handleCheckboxChange = (event) => {
-        setIsShiny(event.target.checked);
-    };
-
+const PokemonCard = ({ pokemon, loading, isShiny }) => {
     if (loading) {
         return (
             <AnimatePresence>
@@ -90,7 +84,7 @@ const PokemonCard = ({ pokemon, loading }) => {
                         alt={pokemon.name}
                     />
                     <CardContent sx={contentStyles}>
-                        <Stack spacing={2} alignItems="center">
+                        <Stack spacing={2} alignItems="left">
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'PokemonPixel', textAlign: 'left', fontSize: '2rem' }}>
                                 {pokemon.name} (#{id})
                             </Typography>
@@ -107,12 +101,6 @@ const PokemonCard = ({ pokemon, loading }) => {
                             <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
                                 <b>Abilities:</b> {abilities}
                             </Typography>
-                            <FormControlLabel
-                                control={
-                                    <Checkbox checked={isShiny} onChange={handleCheckboxChange} color="primary" />
-                                }
-                                label="Show Shiny"
-                            />
                         </Stack>
                     </CardContent>
                 </Card>

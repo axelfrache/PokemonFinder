@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { CircularProgress } from '@mui/material';
+import { CircularProgress, FormControlLabel, Switch, Box } from '@mui/material';
 import SearchBar from './components/SearchBar';
 import PokemonCard from './components/PokemonCard';
 import Header from './components/Header';
@@ -10,6 +10,7 @@ import './App.css';
 function App() {
     const [pokemonData, setPokemonData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [isShiny, setIsShiny] = useState(false);
 
     const cleanDescription = (description) => description.replace(/\f/g, ' ');
 
@@ -47,12 +48,20 @@ function App() {
                 const pokemonName = e.target.elements.pokemonName.value.trim();
                 if (pokemonName) fetchPokemonData(pokemonName);
             }} />
+            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 1 }}>
+                <FormControlLabel
+                    control={
+                        <Switch checked={isShiny} onChange={(e) => setIsShiny(e.target.checked)} color="primary" />
+                    }
+                    label="Show Shiny"
+                />
+            </Box>
             {loading && (
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20%' }}>
                     <CircularProgress />
                 </div>
             )}
-            {pokemonData && <PokemonCard pokemon={pokemonData} />}
+            {pokemonData && <PokemonCard pokemon={pokemonData} isShiny={isShiny} />}
         </div>
     );
 }
