@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardContent, Typography, CardMedia, Divider, Stack } from '@mui/material';
+import React, { useState } from 'react';
+import { Card, CardContent, Typography, CardMedia, Divider, Stack, CircularProgress, FormControlLabel, Checkbox } from '@mui/material';
 import '../assets/fonts/fonts.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -30,15 +30,44 @@ const contentStyles = {
     flex: '1',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 2,
     fontFamily: 'Arial, PokemonPixel',
 };
 
-const PokemonCard = ({ pokemon }) => {
+const PokemonCard = ({ pokemon, loading }) => {
+    const [isShiny, setIsShiny] = useState(false);
+
+    const handleCheckboxChange = (event) => {
+        setIsShiny(event.target.checked);
+    };
+
+    if (loading) {
+        return (
+            <AnimatePresence>
+                <motion.div
+                    key="loading"
+                    variants={variants}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                >
+                    <Card sx={cardStyles}>
+                        <CardContent sx={contentStyles}>
+                            <CircularProgress />
+                        </CardContent>
+                    </Card>
+                </motion.div>
+            </AnimatePresence>
+        );
+    }
+
     if (!pokemon) return null;
     const types = pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
     const abilities = pokemon.abilities.map(abilityInfo => abilityInfo.ability.name).join(', ');
     const { generation, description, id } = pokemon;
+    const imageUrl = isShiny ? pokemon.sprites.front_shiny : pokemon.sprites.front_default;
 
     return (
         <AnimatePresence>
@@ -57,15 +86,15 @@ const PokemonCard = ({ pokemon }) => {
                             height: { xs: 170, sm: 'auto' },
                             objectFit: 'contain',
                         }}
-                        image={pokemon.sprites.front_default}
+                        image={imageUrl}
                         alt={pokemon.name}
                     />
                     <CardContent sx={contentStyles}>
-                        <Stack spacing={2}>
+                        <Stack spacing={2} alignItems="center">
                             <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: 'PokemonPixel', textAlign: 'left', fontSize: '2rem' }}>
                                 {pokemon.name} (#{id})
                             </Typography>
-                            <Divider variant="middle" sx={{ bgcolor: '#ef233c' }} />
+                            <Divider variant="middle" sx={{ bgcolor: '#ef233c', width: '100%' }} />
                             <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
                                 <b>Description:</b> {description}
                             </Typography>
@@ -78,6 +107,12 @@ const PokemonCard = ({ pokemon }) => {
                             <Typography variant="subtitle1" component="p" sx={{ fontFamily: 'Roboto', fontSize: '1rem' }}>
                                 <b>Abilities:</b> {abilities}
                             </Typography>
+                            <FormControlLabel
+                                control={
+                                    <Checkbox checked={isShiny} onChange={handleCheckboxChange} color="primary" />
+                                }
+                                label="Show Shiny"
+                            />
                         </Stack>
                     </CardContent>
                 </Card>
