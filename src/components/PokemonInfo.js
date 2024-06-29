@@ -4,9 +4,9 @@ import '../assets/fonts/fonts.css';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const variants = {
-    initial: { x: '-100vw' },
-    animate: { x: 0, transition: { type: 'spring', stiffness: 25 } },
-    exit: { x: '100vw', transition: { duration: 0.5 } },
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 50, damping: 10 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
 };
 
 const cardStyles = {
@@ -17,9 +17,9 @@ const cardStyles = {
     overflow: 'hidden',
     backgroundColor: '#f6f6f6',
     boxShadow: '0 0 10px 0 rgba(0,0,0,0.2)',
-    transition: 'transform 0.3s, box-shadow 0.3s',
+    transition: 'background-color 0.3s, box-shadow 0.3s',
     '&:hover': {
-        transform: 'scale(1.05)',
+        backgroundColor: '#e0f7fa',
         boxShadow: '0 0 20px 0 rgba(0,0,0,0.3)',
     },
 };
@@ -47,7 +47,7 @@ const PokemonInfo = ({ pokemon }) => {
                 animate="animate"
                 exit="exit"
             >
-                <Card sx={cardStyles} component={motion.div} whileHover={{ scale: 1.05 }}>
+                <Card sx={cardStyles}>
                     <CardMedia
                         component="img"
                         sx={{
