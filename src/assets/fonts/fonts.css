@@ -3,10 +3,6 @@
     src: url('pokemon_pixel_font.woff') format('woff');
 }
 @font-face {
-    font-family: 'PokemonClassic';
-    src: url('PokemonClassic.ttf') format('truetype');
-}
-@font-face {
     font-family: 'Roboto';
     src: url('Roboto-Regular.ttf') format('truetype');
 }
