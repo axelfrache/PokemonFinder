@@ -13,8 +13,8 @@ Before you begin, ensure you have met the following requirements:
 
 **Clone the repository:**
 ```bash
-git clone https://https://github.com/axelfrache/ReactPokemonFinder.git
-cd react-pokemon-finder
+git clone https://github.com/axelfrache/PokemonFinder.git
+cd PokemonFinder
 ```
 
 **Install the required packages:**
@@ -61,7 +61,30 @@ Contributions to Pokemon Finder are welcome!
 
 1. **Fork the repository** on GitHub.
 2. **Clone your fork** to your local machine.
-3. **Create a new branch** for your features or fixes.
-4. **Commit your changes** with descriptive commit messages.
-5. **Push your branch** to your fork.
-6. **Open a pull request** against the main repository.
+   ```sh
+   git clone https://github.com/your-username/ReactPokemonFinder.git
+   ```
+3. Create a new branch for your features or fixes.
+   ```sh
+   git checkout -b feature/{feature-name}
+    ```
+4. Commit your changes with descriptive commit messages.
+    ```shell
+    git commit -m "Add feature description"
+    ``` 
+5. Push your branch to your fork.
+   ```sh
+   git push origin feature-name
+    ```
+6. Open a pull request against the main repository.
+
+Please refer to the [contribution guidelines](./CONTRIBUTING.md) for detailed instructions.
+
+## Issue and Pull Request Templates
+
+When opening an issue, please use the appropriate template:
+
+- [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)
+- [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md)
+
+For pull requests, ensure you follow the [pull request template](.github/PULL_REQUEST_TEMPLATE.md)
