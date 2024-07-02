@@ -39,20 +39,20 @@ To add a new feature, follow these steps:
 ```sh
 git clone https://github.com/axelfrache/PokemonFinder.git
 ```
-3. Create a new branch for your feature.
+3. **Create a new branch** for your feature.
 ```sh
 git checkout -b feature/{feature-name}
 ```
-4. Add tests for your feature if applicable.
-5. Commit your changes and provide a clear and descriptive commit message.
+4. **Add tests** for your feature if applicable.
+5. **Commit your changes** and provide a clear and descriptive commit message.
 ```sh
 git commit -m "Add feature description"
 ```
-6. Push your branch to GitHub.
+6. **Push your branch** to GitHub.
 ```sh
 git push origin feature-name
 ```
-7. Open a Pull Request on GitHub and provide a clear description of your feature and the changes made
+7. **Open a Pull Request** on GitHub and provide a clear description of your feature and the changes made
 
 ### Running Tests
 Before submitting a pull request, ensure that all tests pass. You can run the tests using the following command:
