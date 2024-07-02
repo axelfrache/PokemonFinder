@@ -70,19 +70,19 @@ Contributions to Pokemon Finder are welcome!
    ```sh
    git clone https://github.com/your-username/ReactPokemonFinder.git
    ```
-3. Create a new branch for your features or fixes.
+3. **Create a new branch** for your features or fixes.
    ```sh
    git checkout -b feature/{feature-name}
     ```
-4. Commit your changes with descriptive commit messages.
+4. **Commit your changes** with descriptive commit messages.
     ```shell
     git commit -m "Add feature description"
     ``` 
-5. Push your branch to your fork.
+5. **Push your branch** to your fork.
    ```sh
    git push origin feature-name
     ```
-6. Open a pull request against the main repository.
+6. **Open a pull request** against the main repository.
 
 Please refer to the [contribution guidelines](./CONTRIBUTING.md) for detailed instructions.
 
