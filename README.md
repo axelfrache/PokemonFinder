@@ -3,8 +3,8 @@
 Pokemon Finder is a simple web application built with React that allows users to search for Pokémon by name or ID. Utilizing the PokéAPI, it provides detailed information about each Pokémon, including its type, abilities, and the games it appears in.
 
 <p>
-  <a href="./src/assets/images/screenshot.png" target="_blank" rel="noreferrer">
-    <img src="./src/assets/images/screenshot.png" alt="Pokemon Finder Screenshot" width="600">
+  <a href="./src/assets/images/pokemonFinderDemo.gif" target="_blank" rel="noreferrer">
+    <img src="./src/assets/images/pokemonFinderDemo.gif" alt="Pokemon Finder Demo" width="600">
   </a>
 </p>
 
