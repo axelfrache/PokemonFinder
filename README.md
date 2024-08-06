@@ -8,14 +8,15 @@ Pokemon Finder is a simple web application built with React that allows users to
   </a>
 </p>
 
-## Prerequisites
 
-Before you begin, ensure you have met the following requirements:
+## 🚀 Get Started
 
-- Node.js installed on your machine (version 12.x or later recommended).
-- npm (Node Package Manager) or Yarn, depending on your preferences for managing JavaScript packages.
+### Prerequisites
 
-## Installation
+- 🟢 Node.js
+- 📦 npm or Yarn
+
+### Installation
 
 **Clone the repository:**
 ```bash
@@ -23,7 +24,7 @@ git clone https://github.com/axelfrache/PokemonFinder.git
 cd PokemonFinder
 ```
 
-**Install the required packages:**
+**Install dependencies:**
 - Using npm:
 ```bash
 npm install
@@ -42,27 +43,25 @@ npm start
 ```bash
 yarn start
 ```
-This will launch the React application in your default web browser. The app typically runs on http://localhost:3000.
+Open http://localhost:3000 in your browser.
 
-## Usage
+### 🕹️ Usage
 
 To use React Pokemon Finder, follow these steps:
 
-1. **Open the application** in your web browser. You should see a search bar with the text "Enter a Pokémon name or ID".
+1. **Open the application** in your web browser.
+2. **Search for a Pokémon** by entering its name or ID.
+3. **Click "Search"** or press enter.
 
-2. **Enter a Pokémon name or ID** in the search bar. The name is not case sensitive, and leading zeros in an ID can be omitted.
+4. **View the details** of your Pokémon below the search bar.
 
-3. **Click the "Search" button** or press enter to submit your search.
+## 🌟 Features
 
-4. **View the Pokémon's details** displayed below the search bar. If the Pokémon cannot be found, an error message will be displayed.
+- 🔍 Search by name or ID
+- 📖 Detailed Pokémon info (types, abilities, game appearances)
+- 📱 Responsive design for all devices
 
-## Features
-
-- Search for Pokémon by name or numerical ID.
-- View detailed information about each Pokémon, including types, abilities, and game appearances.
-- Responsive design for viewing on various devices.
-
-## Contributing
+## 🤝 Contributing
 Contributions to Pokemon Finder are welcome!
 
 1. **Fork the repository** on GitHub.
@@ -86,7 +85,7 @@ Contributions to Pokemon Finder are welcome!
 
 Please refer to the [contribution guidelines](./CONTRIBUTING.md) for detailed instructions.
 
-## Issue and Pull Request Templates
+### 🛠️ Templates
 
 When opening an issue, please use the appropriate template:
 
